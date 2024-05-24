@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travaux - Alice Derouillon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+
+        
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+         </div>
+         <div class="container">
+
+        <menu class="menu">
+            <ul>
+                <li><a href="#s1">SEMESTRE 1</a></li>
+                <li><a href="#home"><img src="img/logo.png" alt="Logo Alice Derouillon"></a></li>
+                <li><a href="#s2">SEMESTRE 2</a></li>
+            </ul>
+        </menu>
+
+
+         <div id="home">
+            <div class="home-content">
+                <div class="title">
+                    <h1>Site de Travail MMI</h1>
+                </div>
+                <div class="avatar">
+                    <!-- <img src="img/ReadyPlayerMe-Avatar.p" alt="Avatar"> -->
+                </div>
+            </div>
+        </div>
+
+        <div id="s1">
+            <h2>SEMESTRE 1</h2>
+            <div id="sc1">
+            <a href="http://193.168.146.252/travaux/r112/sequence1/" class="rectangle rectangle1">
+                <img src="img/batman-logo.png" alt="Logo 1">
+                <h2>Batman</h2>
+                <p class="num">01</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r112/sequence2/" class="rectangle rectangle2">
+                <img src="img/rice-bowl (1).png" alt="Logo 2">
+                <h2>Yoko's Kitchen</h2>
+                <p class="num">02</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r112/sequence3/" class="rectangle rectangle3">
+                <img src="img/patate.png" alt="Logo 3">
+                <h2>Mr Patate</h2>
+                <p class="num">03</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r112/sequence4/" class="rectangle rectangle4">
+                <img src="img/businessman.png" alt="Logo 4">
+                <h2>John Doe</h2>
+                <p class="num">04</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r112/sequence5/" class="rectangle rectangle5">
+                <img src="img/tree-silhouette.png" alt="Logo 5">
+                <h2>Arboretum</h2>
+                <p class="num">05</p>
+            </a>
+        </div>
+    </div>
+
+        <div id="s2">
+            <h2>SEMESTRE 2</h2>
+            <div id="sc2">
+            
+            <a href="http://193.168.146.252/travaux/r212/sequence1/" class="rectangle rectangle6">
+                <img src="img/avatar.png" alt="Logo 1">
+                <h2>Monopoly</h2>
+                <p class="num">01</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r212/sequence2/" class="rectangle rectangle7">
+                <img src="img/ramp.png" alt="Logo 2">
+                <h2>Hony Tawk's</h2>
+                <p class="num">02</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r212/sequence3/" class="rectangle rectangle8">
+                <img src="img/java-script.png" alt="Logo 3">
+                <h2>Javascript</h2>
+                <p class="num">03</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r212/sequence4/" class="rectangle rectangle9">
+                <img src="img/calculator.png" alt="Logo 4">
+                <h2>Calculatrice JS</h2>
+                <p class="num">04</p>
+            </a>
+            <a href="http://193.168.146.252/travaux/r212/sequence5/" class="rectangle rectangle10">
+                <img src="img/arrow.png" alt="Logo 5">
+                <h2>Parallax</h2>
+                <p class="num">05</p>
+            </a>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.localScroll.min.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+
+
+    <script type="text/javascript">
+$(document).ready(function() {
+    $.localScroll();
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.scroll-to-top').addClass('show');
+        } else {
+            $('.scroll-to-top').removeClass('show');
+        }
+
+        // Ajuster la hauteur de la vague en fonction du défilement de la page
+        var scrollTop = $(this).scrollTop();
+        var waveHeight = Math.min(scrollTop, $(window).height()); 
+        $('.wave').height(waveHeight);
+    });
+
+    $('.scroll-to-top').click(function() {
+        $.scrollTo('#home', 100);
+    });
+});
+    </script>
+
+<div class="scroll-to-top">
+    &#9650;
+</div>
+
+</body>
+</html>
