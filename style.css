@@ -24,12 +24,12 @@ body, html {
 
 .wave {
     background: rgba(60, 151, 237, 0.25);
-    border-radius: 1000% 1000% 0 0;
+    border-radius: 1000% 1000% 100% 0;
     position: fixed;
-    width: 200%;
-    height: auto;
+    width: 400%;
+    height: 60vh;
     animation: wave 10s -3s linear infinite;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(10px, 0, 100px);
     opacity: 0.8;
     bottom: 0;
     left: 0;
@@ -37,15 +37,17 @@ body, html {
 }
 
 .wave:nth-of-type(2) {
-    bottom: -1.25em;
+    /* bottom: -1.25em; */
     animation: wave 18s linear reverse infinite;
     opacity: 0.8;
+    /* transform: translateY(100vh); */
 }
 
 .wave:nth-of-type(3) {
     bottom: -2.5em;
     animation: wave 20s -1s reverse infinite;
     opacity: 0.9;
+    /* transform: translateY(150vh); */
 }
 
 @keyframes wave {
@@ -115,7 +117,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 1000px;
+    height: 100vh;
     padding: 0 150px; 
     color: white;
 }
@@ -135,7 +137,7 @@ body, html {
 
 #s1, #s2, #home {
     /* width: 100%; */
-    height: 1000px;
+    height: 100vh;
     color: white;
 }
 
@@ -149,17 +151,19 @@ body, html {
 
 #sc1, #sc2{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
-    height: 1000px; 
+    height: 100vh; 
 
 }
 
 .rectangle {
     position: relative;
     width: 200px; 
+    height: 300px;
     text-align: center;
     padding: 40px;
     background-color: #070d27;
@@ -172,8 +176,10 @@ body, html {
     align-items: center;
     transition: box-shadow 0.3s ease, transform 0.3s ease, height 0.3s ease;
     overflow: hidden;
-    height: 300px;
+    height: 200px;
 }
+
+
 
 .rectangle img {
     width: 80px;
@@ -262,7 +268,7 @@ body, html {
 }
 
 .rectangle8::after {
-    background-image: url('img/');
+    background-image: url('img/js.png');
 }
 
 .rectangle9::after {
@@ -271,6 +277,9 @@ body, html {
 
 .rectangle10::after {
     background-image: url('img/parallax.png');
+}
+.rectangle11::after {
+    background-image: url('img/wow.jpg');
 }
 
 
@@ -296,4 +305,80 @@ body, html {
 .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
+}
+
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        /* background-color: rgba(7, 13, 39, 0.95); */
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu ul.show {
+        display: flex;
+    }
+
+    .menu ul li {
+        padding: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #s1, #s2 {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    #sc1, #sc2 {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    .rectangle {
+        width: 80%;
+        height: auto;
+    }
 }
